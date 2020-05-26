@@ -1,0 +1,2 @@
+# MisCatcher
+MisCatcher is an IDE plugin in Android Studio to support Android developers to write more secure code. It helps developers to find out mismatches between advertised permissions via UI and actual used permission in the background, and suggest quick-fixes to resolve these mismatches. With the support of MisCatcher, users do not get confused of what are shown to them in the UI and what are running in the background.
