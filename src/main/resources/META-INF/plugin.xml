@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>saarland.cispa.miscatcher</id>
+    <name>MisCatcher</name>
+    <version>1.0</version>
+    <vendor email="bao.nguyen@cispa.saarland">
+        CISPA – Helmholtz Center for Information Security and Privacy
+    </vendor>
+
+    <description>Plugin to support developers in detecting permission usage mismatch between UI elements and its related code</description>
+
+
+    <depends>com.intellij.modules.lang</depends>
+    <idea-version since-build="191" until-build="191.*"/>
+    <depends>org.jetbrains.plugins.gradle</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>com.intellij.modules.androidstudio</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection language="JAVA" shortName="ApiDependency" displayName="UIMis Api UI Mismatch Inspector"
+                         hasStaticDescription="true"
+                         enabledByDefault="true"
+                         runForWholeFile="true"
+                         implementationClass="inspection.ApiDependencyInspection"
+                         groupName="UIMis"/>
+        <projectService serviceImplementation="ui.PermissionDependenciesWindow"/>
+<!--        <applicationService serviceImplementation="service.localService.LocalDataService"/>-->
+    </extensions>
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>service.applicationComponent.ProjectListener</implementation-class>
+        </component>
+
+    </application-components>
+</idea-plugin>
